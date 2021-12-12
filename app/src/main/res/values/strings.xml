@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BookProject</string>
+    <string name="book_register">Registro de un libro</string>
+    <string name="Name_book">Nombre</string>
+    <string name="name_author">Autor:</string>
+    <string name="number_pages">Numero de paginas:</string>
+    <string name="abstract1">Sinopsis</string>
+    <string name="save_book">Guardar</string>
+</resources>
