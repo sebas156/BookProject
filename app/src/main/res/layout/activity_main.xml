@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".MainActivity">
 
     <TextView
@@ -19,52 +25,48 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/name_book_text_view"
-        style="@style/TextViewSubTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="@string/Name_book"
-        android:textColor="#A1887F"
-        app:layout_constraintBottom_toBottomOf="@+id/name_book_edit_text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/name_book_edit_text" />
-
-    <EditText
-        android:id="@+id/name_book_edit_text"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/name_book_text_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/name_book_text_view"
-        app:layout_constraintTop_toBottomOf="@+id/title_text_view"
-        tools:ignore="SpeakableTextPresentCheck"
-        android:importantForAutofill="no" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_text_view">
 
-    <EditText
-        android:id="@+id/name_author_edit_text"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/name_book_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Name_book" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/author_text_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:hint="@string/name_author"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_book_edit_text"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/name_book_text_input_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/name_author_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name_author" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/pages_text_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -72,7 +74,7 @@
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_author_edit_text">
+        app:layout_constraintTop_toBottomOf="@+id/author_text_input_layout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/pages_edit_text"
@@ -80,7 +82,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/number_pages"
             android:inputType="number"
-            tools:ignore="TextContrastCheck" />
+             />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -96,6 +98,7 @@
         app:layout_constraintTop_toBottomOf="@+id/pages_text_input_layout">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/abstract_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/abstract1" />
@@ -106,12 +109,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:text="@string/save_book"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/abstract_text_input_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/publicationDateButton" />
 
     <TextView
         android:id="@+id/info_text_view"
@@ -125,4 +128,147 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/save_button" />
 
+    <TextView
+        android:id="@+id/textView"
+        style="@style/TextViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/gender"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/abstract_text_input_layout" />
+
+    <CheckBox
+        android:id="@+id/SuspenseCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/Thriller"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <CheckBox
+        android:id="@+id/TerrorCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/Terror"
+        app:layout_constraintStart_toEndOf="@+id/SuspenseCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <CheckBox
+        android:id="@+id/ChildCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/forChildren"
+        app:layout_constraintStart_toEndOf="@+id/TerrorCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <CheckBox
+        android:id="@+id/FictionCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/Fiction"
+        app:layout_constraintStart_toEndOf="@+id/ChildCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ScoreTextView">
+
+        <RadioButton
+            android:id="@+id/FirstRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="@string/JUST1" />
+
+        <RadioButton
+            android:id="@+id/SecondRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="@string/JUST2" />
+
+        <RadioButton
+            android:id="@+id/ThirdRadioButton"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/JUST3" />
+
+        <RadioButton
+            android:id="@+id/ForthRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/JUST4" />
+
+        <RadioButton
+            android:id="@+id/FihtRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="@string/JUST5" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/ScoreTextView"
+        style="@style/TextViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/Score"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ChildCheckBox" />
+
+    <TextView
+        android:id="@+id/PublicationDateTextView"
+        style="@style/TextViewNormal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/publication_date"
+        app:layout_constraintBottom_toBottomOf="@+id/publicationDateButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/publicationDateButton" />
+
+    <Button
+        android:id="@+id/publicationDateButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:drawableStart="@drawable/ic_calendar"
+        android:drawableTint="@color/white"
+        android:text="@string/date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/PublicationDateTextView"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+

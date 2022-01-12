@@ -2,8 +2,22 @@
     <string name="app_name">BookProject</string>
     <string name="book_register">Registro de un libro</string>
     <string name="Name_book">Nombre</string>
-    <string name="name_author">Autor:</string>
+    <string name="name_author">Author:</string>
     <string name="number_pages">Numero de paginas:</string>
     <string name="abstract1">Sinopsis</string>
     <string name="save_book">Guardar</string>
+    <string name="info">Nombre: %s \nAuthor: %s \nPaginas %d \nAbstract: %s \nGenero: %s \nCalificacion: %d \nFecha de publicación: %s</string>
+    <string name="gender">Genero</string>
+    <string name="Thriller">Suspenso</string>
+    <string name="Terror">Terror</string>
+    <string name="forChildren">Infantil</string>
+    <string name="Fiction">Ficcion</string>
+    <string name="Score">CALIFICACION</string>
+    <string name="JUST1">1</string>
+    <string name="JUST2">2</string>
+    <string name="JUST3">3</string>
+    <string name="JUST4">4</string>
+    <string name="JUST5">5</string>
+    <string name="publication_date">"Fecha de publicación: "</string>
+    <string name="date">DD-MM-YY</string>
 </resources>
